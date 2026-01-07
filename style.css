@@ -214,16 +214,7 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     font-size: 0.9rem;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    .nav-links { display: none; } /* Simple hide for mobile for now */
-    .split-grid, .footer-grid { grid-template-columns: 1fr; }
-    .image-block { min-height: 250px; order: -1; margin-bottom: 30px;}
-    .policy-container { margin: 40px 20px; padding: 25px;}
-}
-
-/* UPDATED: Floating WhatsApp Button Styling */
+/* Floating WhatsApp Button Styling */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -249,8 +240,92 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     height: 35px;
 }
 
-/* Ensure it doesn't overlap on mobile */
+/* Popup Overlay (Dark Background) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darkens the rest of the site */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+/* The Popup Box (75% Screen Size) */
+.popup-box {
+    width: 75vw; /* 75% width */
+    height: 75vh; /* 75% height */
+    background: rgba(255, 255, 255, 0.85); /* Translucent White */
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* "Jai Shree Krishna" */
+.spiritual-text {
+    color: #ea580c; 
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* "Launching Soon" */
+.main-message {
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.main-message h1 {
+    font-size: 4rem;
+    color: #0f172a;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.main-message p {
+    font-size: 1.2rem;
+    color: #64748b;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #ea580c;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .nav-links { display: none; }
+    .split-grid, .footer-grid { grid-template-columns: 1fr; }
+    .image-block { min-height: 250px; order: -1; margin-bottom: 30px;}
+    .policy-container { margin: 40px 20px; padding: 25px;}
+
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
@@ -260,5 +335,14 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     .whatsapp-float img {
         width: 28px;
         height: 28px;
+    }
+
+    /* Popup Mobile Adjustments */
+    .popup-box {
+        width: 90%;
+        height: 60%;
+    }
+    .main-message h1 {
+        font-size: 2.5rem;
     }
 }
