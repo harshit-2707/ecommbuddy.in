@@ -1,4 +1,6 @@
-/* Main Stylesheet - EcommBuddy */
+/* =========================================
+   1. CORE VARIABLES & RESET
+   ========================================= */
 :root {
     --primary: #0f172a;     /* Deep Navy - Trust & Authority */
     --secondary: #2563eb;   /* Vivid Blue - Digital & Tech */
@@ -21,7 +23,9 @@ body {
     line-height: 1.7;
 }
 
-/* Typography & Utilities */
+/* =========================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================= */
 h1, h2, h3, h4 {
     color: var(--primary);
     font-weight: 800;
@@ -40,6 +44,9 @@ a { text-decoration: none; transition: 0.3s; }
     padding: 0 25px;
 }
 
+.text-center { text-align: center; }
+
+/* Standard Buttons */
 .btn {
     display: inline-block;
     padding: 15px 35px;
@@ -55,7 +62,9 @@ a { text-decoration: none; transition: 0.3s; }
     box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
 }
 
-/* Header & Nav */
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
 header {
     background: var(--white);
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
@@ -90,7 +99,9 @@ nav {
 
 .nav-links a:hover { color: var(--secondary); }
 
-/* Hero Section */
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
 .hero {
     background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
     padding: 120px 0;
@@ -101,10 +112,12 @@ nav {
 .hero h1 { color: var(--white); margin-bottom: 25px; }
 .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
 
-/* Sections General */
+/* =========================================
+   5. SECTIONS (WHY US & SERVICES)
+   ========================================= */
 .section-pad { padding: 100px 0; }
 
-/* Split Layout (Why Ecommerce) */
+/* Split Layout (Left Text / Right Image) */
 .split-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -130,9 +143,8 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Why Us Pillars */
+/* Pillars Grid (Services) */
 .pillars-bg { background-color: var(--white); }
-.text-center { text-align: center; }
 
 .pillars-grid {
     display: grid;
@@ -162,7 +174,9 @@ nav {
     display: block;
 }
 
-/* Policy Page Specific Styling */
+/* =========================================
+   6. POLICY PAGE STYLING
+   ========================================= */
 .policy-container {
     max-width: 900px;
     margin: 80px auto;
@@ -176,8 +190,9 @@ nav {
 .policy-container ul { padding-left: 20px; margin-bottom: 20px; }
 .policy-container li { margin-bottom: 10px; }
 
-
-/* Footer */
+/* =========================================
+   7. FOOTER
+   ========================================= */
 footer {
     background: var(--primary);
     color: #94a3b8; /* Muted text for footer */
@@ -214,7 +229,9 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     font-size: 0.9rem;
 }
 
-/* Floating WhatsApp Button Styling */
+/* =========================================
+   8. FLOATING WHATSAPP BUTTON
+   ========================================= */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -240,14 +257,16 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     height: 35px;
 }
 
-/* Popup Overlay (Dark Background) */
+/* =========================================
+   9. POPUP STYLES (Fixed Alignment)
+   ========================================= */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Darkens the rest of the site */
+    background: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -255,36 +274,38 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     backdrop-filter: blur(5px);
 }
 
-/* The Popup Box (75% Screen Size) */
 .popup-box {
-    width: 75vw; /* 75% width */
-    height: 75vh; /* 75% height */
-    background: rgba(255, 255, 255, 0.85); /* Translucent White */
+    width: 75vw;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.90);
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
-    text-align: center;
+    padding: 20px;
     border: 1px solid rgba(255,255,255,0.5);
 }
 
-/* "Jai Shree Krishna" */
+/* Internal wrapper to handle centering */
+.popup-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .spiritual-text {
     color: #ea580c; 
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 40px; /* Space from top */
 }
 
-/* "Launching Soon" */
 .main-message {
-    margin-bottom: auto;
-    margin-top: auto;
+    margin-top: auto;    /* Push to vertical center */
+    margin-bottom: auto; /* Push to vertical center */
+    text-align: center;
 }
 
 .main-message h1 {
@@ -292,25 +313,26 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     color: #0f172a;
     text-transform: uppercase;
     font-weight: 900;
+    line-height: 1.1;
     margin-bottom: 10px;
 }
 
 .main-message p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #64748b;
 }
 
-/* Close Button */
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 15px;
+    right: 25px;
     background: none;
     border: none;
     font-size: 3rem;
     color: #333;
     cursor: pointer;
-    transition: 0.3s;
+    line-height: 1;
+    z-index: 10;
 }
 
 .close-btn:hover {
@@ -318,14 +340,21 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
     transform: scale(1.1);
 }
 
-/* Mobile Responsive */
+/* =========================================
+   10. MOBILE RESPONSIVE
+   ========================================= */
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
-    .nav-links { display: none; }
+    
+    .nav-links { display: none; } /* Simplified menu for now */
+    
     .split-grid, .footer-grid { grid-template-columns: 1fr; }
+    
     .image-block { min-height: 250px; order: -1; margin-bottom: 30px;}
+    
     .policy-container { margin: 40px 20px; padding: 25px;}
 
+    /* WhatsApp Mobile */
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
@@ -337,12 +366,17 @@ footer h3 { color: var(--white); margin-bottom: 20px; }
         height: 28px;
     }
 
-    /* Popup Mobile Adjustments */
+    /* Popup Mobile */
     .popup-box {
         width: 90%;
         height: 60%;
+        padding: 15px;
+    }
+    .spiritual-text {
+        font-size: 1.2rem;
+        margin-top: 30px;
     }
     .main-message h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 }
