@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Disallow crawling of backend stuff if you ever add it
+Disallow: /cgi-bin/
+Disallow: /private/
+
+# Point Google to your Sitemap
 Sitemap: https://ecommbuddy.in/sitemap.xml
