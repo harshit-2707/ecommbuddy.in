@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="style.css?v=2">
     <link rel="icon" href="https://fav.farm/🚀" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -31,7 +33,7 @@
                 <div class="nav-links">
                     <a href="#importance">The Shift</a>
                     <a href="#services">Why Us</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact-section">Contact</a>
                 </div>
             </nav>
         </div>
@@ -96,14 +98,54 @@
         </div>
     </section>
 
-    <footer id="contact">
+    <section id="contact-section" class="section-pad" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Get in Touch</h2>
+            <div class="contact-wrapper" style="display: flex; gap: 50px; flex-wrap: wrap; justify-content: center;">
+                
+                <div class="contact-info" style="flex: 1; min-width: 300px;">
+                    <h3>Let's Discuss Your Project</h3>
+                    <p style="margin-bottom: 20px;">Ready to scale? Fill out the form or drop us an email directly.</p>
+                    
+                    <div style="margin-bottom: 15px; font-size: 1.1rem;">
+                        <i class="fas fa-envelope" style="color: #ff9900; margin-right: 10px;"></i>
+                        <a href="mailto:harshit@ecommbuddy.in" style="font-weight: bold;">harshit@ecommbuddy.in</a>
+                    </div>
+                    
+                    <div style="font-size: 1.1rem;">
+                        <i class="fas fa-map-marker-alt" style="color: #ff9900; margin-right: 10px;"></i>
+                        <span>Prayagraj, India</span>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="contact-form" style="flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">Your Name</label>
+                        <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">Your Phone / Email</label>
+                        <input type="text" name="contact" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">Message</label>
+                        <textarea name="message" rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Send Message</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div>
                     <h3>Ready to dominate your niche?</h3>
-                    <p>EcommBuddy is ready to deploy. Let's discuss your strategy.</p>
+                    <p>EcommBuddy is ready to deploy.</p>
                     <br>
-                    <p>Drop a mail to Harshit at:</p>
+                    <p>Direct Mail:</p>
                     <a href="mailto:harshit@ecommbuddy.in" class="contact-highlight">harshit@ecommbuddy.in</a>
                 </div>
                 <div>
@@ -123,6 +165,10 @@
 
     <a href="https://wa.me/916388201024?text=Hi%20Harshit,%20I%20need%20help%20with%20my%20website" target="_blank" class="whatsapp-float">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+    </a>
+
+    <a href="mailto:harshit@ecommbuddy.in" class="whatsapp-float" style="bottom: 90px; background: #0056b3;">
+        <i class="fas fa-envelope" style="color: white; font-size: 24px; line-height: 60px;"></i>
     </a>
 
 </body>
