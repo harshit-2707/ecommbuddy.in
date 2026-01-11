@@ -16,9 +16,7 @@
     <title>EcommBuddy | E-commerce Development & Meta Ads Agency</title>
     
     <meta name="description" content="Need comprehensive Ecommerce help or looking beyond Shopify? Scale your business online with EcommBuddy. We provide custom development, secure store management, and high-ROI Meta Ads campaigns.">
-    
     <meta name="keywords" content="EcommBuddy, Ecombuddy, Ecommerce help, Shopify help, Shopify alternative, E-commerce website developer, Meta Ads agency India, Online store management, Digital marketing for small business">
-    
     <meta name="author" content="EcommBuddy">
     <meta name="robots" content="index, follow">
     
@@ -39,134 +37,138 @@
     <meta name="twitter:image" content="https://ecommbuddy.in/social-preview.png">
 
     <link rel="stylesheet" href="style.css">
-    
     <link rel="icon" type="image/svg+xml" href="logo.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Ecomm<span>Buddy</span></div>
-                <div class="nav-links">
-                    <a href="#importance">The Shift</a>
-                    <a href="#services">Why Us</a>
-                    <a href="#contact">Contact</a>
+                <div class="logo">
+                    <a href="index.html">Ecomm<span class="highlight">Buddy</span></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
                 </div>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <h1>Your Business, Accelerated Digitally.</h1>
-            <p>We don't just build online stores. We engineer digital ecosystems that drive traffic, convert clicks to customers, and scale your revenue through targeted Meta Ads and PR.</p>
-            
-            <a href="https://wa.me/916388201024?text=Hi%20Harshit,%20I%20am%20interested%20in%20partnering%20with%20EcommBuddy" target="_blank" class="btn">Partner With Us</a>
+        <div class="container hero-content">
+            <h1>Scale Your <span class="highlight">E-commerce</span> Business</h1>
+            <p>We handle the Development, Management, and Meta Ads so you can focus on profits.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary">Get Free Consultation</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
         </div>
     </section>
 
-    <section id="importance" class="section-pad">
+    <section id="services" class="section">
         <div class="container">
-            <div class="split-grid">
-                <div>
-                    <h2>The Inevitable Digital Shift</h2>
-                    <p style="margin-bottom: 30px;">The question isn't "if" you should move online, but "how fast." Physical boundaries no longer define your market share.</p>
+            <h2 class="section-title">What We Do</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <i class="fas fa-code icon"></i>
+                    <h3>Store Development</h3>
+                    <p>Custom e-commerce websites built for speed and conversions. Shopify or Custom Code.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-bullhorn icon"></i>
+                    <h3>Meta Ads (FB & Insta)</h3>
+                    <p>High-ROI ad campaigns that target the right buyers and scale your sales.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line icon"></i>
+                    <h3>Store Management</h3>
+                    <p>We manage your inventory, updates, and technical issues daily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Why EcommBuddy?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                Running an online business is hard. The tech breaks, the ads get expensive, and the competition is fierce. 
+                At <strong>EcommBuddy</strong>, we partner with you to solve these problems. We don't just build websites; we build businesses.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's Talk Business</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to scale? Drop us an email or message.</p>
                     
-                    <div class="info-card">
-                        <h3>Why It's Important</h3>
-                        <p>Your customers are already online. A robust e-commerce presence is your 24/7 showroom that builds credibility and captures demand while you sleep. Without it, you are invisible to 90% of your potential market.</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:harshit@ecommbuddy.in">harshit@ecommbuddy.in</a>
                     </div>
-                    <div class="info-card" style="border-left-color: var(--accent);">
-                        <h3>How It Boosts Overall Sales</h3>
-                        <p>Unlike physical retail, digital commerce allows for precise data tracking and retargeting. We turn "window shoppers" into buyers by utilizing frictionless checkouts and strategic upsells that physical stores simply cannot replicate.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Prayagraj, India</span>
                     </div>
                 </div>
-                <div class="image-block" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=80');"></div>
+                
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <section id="services" class="section-pad pillars-bg">
+    <footer>
         <div class="container">
-            <div class="text-center">
-                <h2>Why EcommBuddy is the Best Fit</h2>
-                <p style="max-width: 700px; margin: 0 auto;">We operate at the intersection of robust technology and aggressive marketing. We are developers with a marketer's mindset.</p>
-            </div>
-
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <span class="pillar-icon"></span>
-                    <h3>The Foundation: Development</h3>
-                    <p>A slow site kills sales. We build blazing-fast, secure, and scalable e-commerce architectures designed to handle high traffic volumes without blinking. We ensure the tech never gets in the way of a sale.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>EcommBuddy</h3>
+                    <p>Your Growth Partner.</p>
                 </div>
-
-                <div class="pillar-card">
-                    <span class="pillar-icon"></span>
-                    <h3>The Engine: Management</h3>
-                    <p>Focus on your product, not plugin updates. We handle the boring but crucial backend: security patches, inventory integration, server health, and performance monitoring.</p>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="policy-privacy.html">Privacy Policy</a></li>
+                        <li><a href="policy-terms.html">Terms of Service</a></li>
+                        <li><a href="policy-refund.html">Refund Policy</a></li>
+                    </ul>
                 </div>
-
-                <div class="pillar-card">
-                    <span class="pillar-icon"></span>
-                    <h3>The Fuel: Marketing & PR</h3>
-                    <p>A great site needs traffic. We specialize in high-ROI <strong>Meta Ads</strong> (Facebook/Instagram) that target buyers, not just browsers. We also facilitate strategic <strong>PR Collaborations</strong> to elevate brand authority.</p>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:harshit@ecommbuddy.in" style="color: #bbb;">harshit@ecommbuddy.in</a></p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Ready to dominate your niche?</h3>
-                    <p>EcommBuddy is ready to deploy. Let's discuss your strategy.</p>
-                    <br>
-                    <p>Drop a mail to Harshit at:</p>
-                    <a href="mailto:harshit@ecommbuddy.in" class="contact-highlight">harshit@ecommbuddy.in</a>
-                </div>
-                <div>
-                    <h3>Company Policy</h3>
-                    <div class="footer-links">
-                        <a href="policy-privacy.html">Privacy Policy</a>
-                        <a href="policy-terms.html">Terms of Service</a>
-                        <a href="policy-refund.html">Refund & Cancellation Policy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 EcommBuddy. All rights reserved. | Built for performance.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcommBuddy. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/916388201024?text=Hi%20Harshit,%20I%20need%20help%20with%20my%20website" target="_blank" class="whatsapp-float">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
-    </a>
+    <script>
+        // Simple Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    <div id="launch-popup" class="popup-overlay">
-        <div class="popup-box">
-            <button onclick="document.getElementById('launch-popup').style.display='none'" class="close-btn">&times;</button>
-            <div class="popup-content">
-                <h2 class="spiritual-text">|| Jai Shree Krishna ||</h2>
-                <div class="main-message">
-                    <h1>Launching Soon</h1>
-                    <p>23-01-2026</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
