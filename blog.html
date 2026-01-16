@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Website Development India | EcommBuddy</title>
-    
-    <meta name="keywords" content="E-commerce Website Development India, Web Development Agency">
-    <meta name="description" content="Building scalable e-commerce architectures. From custom stacks to security, EcommBuddy builds digital assets that last.">
+    <title>Insights & Blogs | EcommBuddy</title>
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="favicon.png" type="image/png">
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHGR79YL85"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -18,36 +14,102 @@
       gtag('config', 'G-XHGR79YL85');
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
+        /* --- 3D THEME VARIABLES --- */
         :root {
-            --bg-body: #050505; --text-main: #ffffff; --text-muted: #9ca3af; --accent: #3b82f6;
-            --glass-bg: rgba(255, 255, 255, 0.03); --glass-border: rgba(255, 255, 255, 0.1); --glass-highlight: rgba(255, 255, 255, 0.15); --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); 
+            --bg-body: #050505;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            
+            --glass-bg: rgba(255, 255, 255, 0.03); 
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-highlight: rgba(255, 255, 255, 0.2);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --card-hover-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.5);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-body); background-image: radial-gradient(circle at 50% 0%, #1a1a2e, var(--bg-body) 60%); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.8; }
-        nav { border-bottom: 1px solid var(--glass-border); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+
+        body {
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at 50% 0%, #1a1a2e, var(--bg-body) 80%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        nav {
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.6); backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 100;
+        }
+
         .nav-logo { font-weight: 700; font-size: 1.2rem; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-size: 0.95rem; transition: 0.3s; font-weight: 500; } .nav-links a:hover { color: #fff; }
-        main { max-width: 900px; margin: 60px auto 100px; padding: 0 20px; }
-        .glass-panel { background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--glass-highlight); border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border); border-bottom: 1px solid transparent; border-radius: 24px; padding: 60px; box-shadow: var(--card-shadow); position: relative; overflow: hidden; }
-        .glass-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); }
-        .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 30px; display: flex; align-items: center; gap: 8px; }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; } .breadcrumb a:hover { color: var(--accent); }
-        h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .article-meta { display: flex; gap: 15px; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--glass-border); padding-bottom: 30px; }
-        .tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; background: rgba(59, 130, 246, 0.1); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2); }
-        .date { font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
-        .content p { font-size: 1.1rem; color: #d1d5db; margin-bottom: 24px; font-weight: 300; }
-        .content h2 { font-size: 1.8rem; font-weight: 600; color: #fff; margin-top: 50px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .content h2::before { content: ''; display: block; width: 6px; height: 24px; background: var(--accent); border-radius: 2px; }
-        .content a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent); } .content a:hover { color: #fff; border-bottom-style: solid; }
-        .cta-box { margin-top: 60px; background: linear-gradient(145deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.1)); border: 1px solid rgba(59, 130, 246, 0.2); padding: 40px; border-radius: 16px; text-align: center; }
-        .cta-btn { display: inline-block; margin-top: 20px; background: var(--accent); color: white; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); transition: transform 0.2s; } .cta-btn:hover { transform: translateY(-2px); }
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.9rem; margin-top: 40px; }
-        @media (max-width: 768px) { .glass-panel { padding: 30px 20px; } h1 { font-size: 2rem; } }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-size: 0.95rem; transition: 0.3s; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: #fff; }
+
+        header { text-align: center; padding: 100px 20px 60px; max-width: 800px; margin: 0 auto; }
+        h1 {
+            font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .subtitle { color: var(--text-muted); font-size: 1.25rem; font-weight: 300; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 120px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+
+        /* --- CARD DESIGN --- */
+        .card {
+            background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid var(--glass-highlight); border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border); border-bottom: 1px solid transparent;
+            box-shadow: var(--card-shadow); border-radius: 16px; overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; flex-direction: column; height: 100%; position: relative;
+        }
+
+        .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--card-hover-shadow); border-top-color: rgba(255,255,255,0.4); }
+
+        .card-image-placeholder {
+            height: 180px; width: 100%; background: linear-gradient(45deg, #121212, #1a1a1a);
+            display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.1); font-size: 3rem; position: relative; overflow: hidden;
+        }
+        .card-image-placeholder::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+            transform: skewX(-25deg); animation: sheen 3s infinite;
+        }
+        @keyframes sheen { to { left: 150%; } }
+
+        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .tags { display: flex; gap: 8px; margin-bottom: 15px; }
+        .tag {
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 4px 10px; border-radius: 50px; background: rgba(59, 130, 246, 0.1); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .card h2 { font-size: 1.35rem; margin-bottom: 12px; line-height: 1.4; }
+        .card h2 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
+        .card:hover h2 a { color: var(--accent); }
+        .card p.excerpt { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+
+        .card-footer {
+            display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid var(--glass-border); font-size: 0.85rem; color: var(--text-muted);
+        }
+        .meta { display: flex; align-items: center; gap: 6px; }
+        .read-link {
+            color: var(--text-main); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: 0.3s;
+        }
+        .read-link:hover { color: var(--accent); }
+        .read-link:hover i { transform: translateX(4px); }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -60,44 +122,64 @@
         </div>
     </nav>
 
-    <main>
-        <article class="glass-panel">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> <i class="ri-arrow-right-s-line"></i> 
-                <a href="blog.html">Insights</a> <i class="ri-arrow-right-s-line"></i> 
-                <span>Architecture</span>
-            </div>
+    <header>
+        <h1>Insights & Intelligence</h1>
+        <p class="subtitle">Decode e-commerce growth with technical deep dives and strategic playbooks.</p>
+    </header>
 
-            <h1>E-commerce Website Development India</h1>
+    <main class="container">
+        <div class="blog-grid">
             
-            <div class="article-meta">
-                <span class="tag">Architecture</span>
-                <span class="tag" style="background: rgba(255, 255, 255, 0.05); color: #fff; border-color: rgba(255, 255, 255, 0.1);">Scale</span>
-                <div class="date"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
-                <div class="date"><i class="ri-time-line"></i> 6 min read</div>
-            </div>
-
-            <div class="content">
-                <p>There is a difference between "running a website" and "building a digital asset." A website is just pages on the internet. A digital asset is a secure, scalable platform that adds value to your company valuation.</p>
-                <p>When we talk about <strong>E-commerce website development in India</strong>, we are looking at the big picture. It’s not just about selling a product today; it’s about handling the traffic of 10,000 users during a Diwali sale without crashing.</p>
-
-                <h2>Security First</h2>
-                <p>Indian consumers are becoming more tech-savvy, but they are also more cautious. If your browser shows a "Not Secure" warning, or if the checkout feels glitchy, trust is broken instantly. Security isn't an option; it's a requirement.</p>
-                <p>We ensure that every architecture we build—whether on Shopify, WooCommerce, or a custom stack—follows strict SSL standards and data protection protocols. Your customers trust you with their card details; we make sure you earn that trust.</p>
-
-                <h2>The Right Tech Stack</h2>
-                <p>Should you use Python/Django? MERN Stack? Shopify? There is no single "best" answer. It depends on your business model. If you are a fashion brand, Shopify is likely best. If you are building a complex marketplace with multiple vendors, a custom solution might be better.</p>
-                <p>At <a href="https://ecommbuddy.in/">EcommBuddy</a>, we don't force you into one platform. We act as your consultants to find the technology that fits your long-term goals.</p>
-
-                <div class="cta-box">
-                    <h2 style="justify-content: center; border: none; margin-top: 0;">Build an Asset</h2>
-                    <p>Your website is the face of your brand. Don't let it be an afterthought.</p>
-                    <a href="https://ecommbuddy.in/" class="cta-btn">Start the Conversation</a>
+            <article class="card">
+                <div class="card-image-placeholder"><i class="ri-shopify-fill"></i></div>
+                <div class="card-content">
+                    <div class="tags">
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Shopify</span>
+                    </div>
+                    <h2><a href="shopify-store-development-india.html">Shopify Store Development in India</a></h2>
+                    <p class="excerpt">Why standard templates fail in the Indian market. Learn how to build a store that handles high traffic and reduces RTO losses.</p>
+                    <div class="card-footer">
+                        <div class="meta"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
+                        <a href="shopify-store-development-india.html" class="read-link">Read Now <i class="ri-arrow-right-line"></i></a>
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+
+            <article class="card">
+                <div class="card-image-placeholder"><i class="ri-code-s-slash-line"></i></div>
+                <div class="card-content">
+                    <div class="tags">
+                        <span class="tag" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">Technical</span>
+                    </div>
+                    <h2><a href="custom-shopify-development-india.html">Custom Shopify Development India</a></h2>
+                    <p class="excerpt">When to move beyond apps and start writing custom liquid code for unique brand experiences and faster load times.</p>
+                    <div class="card-footer">
+                        <div class="meta"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
+                        <a href="custom-shopify-development-india.html" class="read-link">Read Now <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </article>
+
+             <article class="card">
+                <div class="card-image-placeholder"><i class="ri-server-line"></i></div>
+                <div class="card-content">
+                    <div class="tags">
+                        <span class="tag" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">Architecture</span>
+                    </div>
+                    <h2><a href="ecommerce-website-development-india.html">E-commerce Website Development India</a></h2>
+                    <p class="excerpt">Building digital assets that last. A deep dive into security, scalability, and choosing the right tech stack for growth.</p>
+                    <div class="card-footer">
+                        <div class="meta"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
+                        <a href="ecommerce-website-development-india.html" class="read-link">Read Now <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
     </main>
 
     <footer>&copy; 2026 EcommBuddy. All rights reserved.</footer>
+
 </body>
 </html>
