@@ -8,200 +8,241 @@
     <meta name="keywords" content="Shopify Store Development in India, Shopify Development in India">
     <meta name="description" content="Expert Shopify Store Development in India. Build a fast, high-converting online store with EcommBuddy.">
     <meta name="robots" content="index, follow">
+    <link rel="icon" href="favicon.png" type="image/png">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHGR79YL85"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XHGR79YL85');
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
+        /* --- SHARED 3D THEME VARIABLES (Same as Blog Page) --- */
         :root {
-            --bg-dark: #0f0f0f;
-            --bg-card: #1a1a1a;
+            --bg-body: #050505;
             --text-main: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent: #3b82f6; /* Professional Blue */
-            --accent-hover: #2563eb;
-            --border: #333333;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            
+            /* Glass Variables */
+            --glass-bg: rgba(255, 255, 255, 0.03); 
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); 
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at 50% 0%, #1a1a2e, var(--bg-body) 60%);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif; /* Modern, clean font */
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8; /* Increased for better reading experience */
         }
 
-        /* Navigation */
+        /* --- Transparent Navbar --- */
         nav {
-            background-color: rgba(15, 15, 15, 0.95);
-            border-bottom: 1px solid var(--border);
-            padding: 20px;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+            z-index: 100;
         }
 
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
+        .nav-logo { font-weight: 700; font-size: 1.2rem; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-size: 0.95rem; transition: 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: #fff; }
 
-        nav a:hover, nav a.active {
-            color: var(--text-main);
-        }
-
-        /* Main Container */
+        /* --- Main Layout --- */
         main {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 24px;
+            max-width: 900px; /* Slightly wider for the glass panel */
+            margin: 60px auto 100px;
+            padding: 0 20px;
         }
 
-        /* Typography */
+        /* --- THE 3D GLASS SHEET (Article Container) --- */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-highlight);
+            border-left: 1px solid var(--glass-border);
+            border-right: 1px solid var(--glass-border);
+            border-bottom: 1px solid transparent;
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle glow at the top of the sheet */
+        .glass-panel::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        }
+
+        /* --- Article Typography --- */
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            color: var(--text-muted); font-size: 0.85rem; margin-bottom: 30px; display: flex; align-items: center; gap: 8px;
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: 0.2s; }
+        .breadcrumb a:hover { color: var(--accent); }
+
         h1 {
             font-size: 2.8rem;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, #a0a0a0);
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
+        /* Tags and Meta */
+        .article-meta {
+            display: flex; gap: 15px; align-items: center; margin-bottom: 40px;
+            border-bottom: 1px solid var(--glass-border); padding-bottom: 30px;
+        }
+        .tag {
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 4px 10px; border-radius: 50px;
+            background: rgba(59, 130, 246, 0.1); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .date { font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+
+        /* Content Text */
+        .content p {
+            font-size: 1.1rem; color: #d1d5db; /* Light gray for readability */
+            margin-bottom: 24px; font-weight: 300;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-weight: 300;
+        .content h2 {
+            font-size: 1.8rem; font-weight: 600; color: #fff;
+            margin-top: 50px; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        
+        /* Little accent line next to H2s */
+        .content h2::before {
+            content: ''; display: block; width: 6px; height: 24px; 
+            background: var(--accent); border-radius: 2px;
         }
 
-        /* Links & Highlights */
-        a.text-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px dashed var(--accent);
+        /* Links in text */
+        .content a {
+            color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);
+            transition: 0.2s;
         }
+        .content a:hover { color: #fff; border-bottom-style: solid; }
 
-        a.text-link:hover {
-            color: var(--accent-hover);
-            border-bottom-style: solid;
-        }
-
-        /* Call to Action Box */
+        /* --- CTA Box (Highlight) --- */
         .cta-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
             margin-top: 60px;
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 40px;
+            border-radius: 16px;
             text-align: center;
         }
 
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: background 0.3s ease;
+        .cta-btn {
+            display: inline-block; margin-top: 20px;
+            background: var(--accent); color: white;
+            padding: 14px 35px; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            transition: transform 0.2s;
         }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-        }
-
-        /* Divider */
-        hr {
-            border: 0;
-            height: 1px;
-            background: var(--border);
-            margin: 40px 0;
-        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6); }
 
         /* Footer */
         footer {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border);
-            margin-top: 80px;
+            text-align: center; padding: 40px; border-top: 1px solid var(--glass-border);
+            color: var(--text-muted); font-size: 0.9rem; margin-top: 40px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .glass-panel { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="blog.html">Insights & Blogs</a>
-        <a href="https://ecommbuddy.in/">Contact</a>
+        <a href="index.html" class="nav-logo">
+            <i class="ri-code-box-line" style="color: var(--accent);"></i> EcommBuddy
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blog.html" class="active">Insights</a>
+        </div>
     </nav>
 
     <main>
         
-        <h1>Shopify Store Development in India</h1>
-        <p style="font-size: 1.25rem; color: #fff;">
-            Scale your business with a store that sells while you sleep.
-        </p>
-        
-        <hr>
-
-        <article>
+        <article class="glass-panel">
             
-            <p>If you have a business in India you know things are different now. You cannot just have a shop on a street and expect people to come in. These days your customers are looking at things, on Instagram Reels they are finding products. Buying them on impulse even at 11 PM. To get their attention you need to have a store that is really good. Your online store needs to be great it needs to be fast and work well so you can catch your customers when they are looking for things to buy online.</p>
-
-            <h2>Why Shopify?</h2>
-            <p>Shopify is really helpful. We work with Shopify a lot making Shopify stores, for people. We have seen what Shopify can do. Shopify is not a place to show your products. Shopify is a way to make a system that sells things for you even when you are not working, like when you're sleeping. Shopify does this for you.</p>
-
-            <h2>Solving Payment Issues</h2>
-            <p>In India people who sell things online had a problem. This problem was about getting paid and sending out the things they sold. Indian sellers would ask things like "How do I get paid using UPI?". What about Cash, on Delivery how does that work for people who buy from me?"</p>
-
-            <p>Shopify has done a job with this. If you want to use Razorpay for online payments or set up rules for paying cash on delivery Shopify has made it simple. For example you can add a fee when someone pays cash on delivery to stop them from returning things. At <a href="https://ecommbuddy.in/" class="text-link">EcommBuddy</a> we think it is very important to set these things up from the start. This helps to reduce losses when people return things, which's a big problem, for many Indian merchants who sell things online. <a href="https://ecommbuddy.in/" class="text-link">EcommBuddy</a> wants to help Indian merchants reduce these losses by setting up Shopify from Day 1.</p>
-
-            <h2>Speed is Money</h2>
-            <p>Speed is money. This is a fact: if your website takes longer than 3 seconds to load on a mobile phone you will lose the customer. Shopify has a system but it still needs to be set up correctly. We work on making images smaller arranging products in a way and using simple themes so your store loads very fast even in smaller cities, like Tier-2 and Tier-3 cities. We make sure your Shopify store loads instantly because speed is money.</p>
-
-            <div class="cta-box">
-                <h2 style="border: none; margin-top: 0;">Ready to Scale?</h2>
-                <p>Launching a store is easy. Scaling it is hard. If you are ready to move beyond basic templates and build a brand that dominates its niche, you need the right technical partner.</p>
-                <a href="https://ecommbuddy.in/" class="btn-primary">Turn Your Store into a Revenue Engine</a>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="ri-arrow-right-s-line"></i> 
+                <a href="blog.html">Insights</a> <i class="ri-arrow-right-s-line"></i> 
+                <span>Strategy</span>
             </div>
 
+            <h1>Shopify Store Development in India</h1>
+            
+            <div class="article-meta">
+                <span class="tag">Strategy</span>
+                <span class="tag" style="background: rgba(255, 255, 255, 0.05); color: #fff; border-color: rgba(255, 255, 255, 0.1);">Shopify</span>
+                <div class="date"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
+                <div class="date"><i class="ri-time-line"></i> 4 min read</div>
+            </div>
+
+            <div class="content">
+                <p>If you have a business in India you know things are different now. You cannot just have a shop on a street and expect people to come in. These days your customers are looking at things, on Instagram Reels they are finding products. Buying them on impulse even at 11 PM.</p>
+                
+                <p>To get their attention you need to have a store that is really good. Your online store needs to be great it needs to be fast and work well so you can catch your customers when they are looking for things to buy online.</p>
+
+                <h2>Why Shopify?</h2>
+                <p>Shopify is really helpful. We work with Shopify a lot making Shopify stores, for people. We have seen what Shopify can do. Shopify is not a place to show your products. Shopify is a way to make a system that sells things for you even when you are not working, like when you're sleeping. Shopify does this for you.</p>
+
+                <h2>Solving Payment Issues</h2>
+                <p>In India people who sell things online had a problem. This problem was about getting paid and sending out the things they sold. Indian sellers would ask things like <em>"How do I get paid using UPI?"</em> or <em>"What about Cash on Delivery, how does that work?"</em></p>
+
+                <p>Shopify has done a job with this. If you want to use Razorpay for online payments or set up rules for paying cash on delivery Shopify has made it simple. For example you can add a fee when someone pays cash on delivery to stop them from returning things. At <a href="https://ecommbuddy.in/">EcommBuddy</a> we think it is very important to set these things up from the start.</p>
+                
+                <p>This helps to reduce losses when people return things, which is a big problem for many Indian merchants who sell things online. EcommBuddy wants to help Indian merchants reduce these losses by setting up Shopify from Day 1.</p>
+
+                <h2>Speed is Money</h2>
+                <p>Speed is money. This is a fact: if your website takes longer than 3 seconds to load on a mobile phone you will lose the customer. Shopify has a system but it still needs to be set up correctly.</p> 
+                
+                <p>We work on making images smaller, arranging products in a way, and using simple themes so your store loads very fast even in smaller cities, like Tier-2 and Tier-3 cities. We make sure your Shopify store loads instantly because speed is money.</p>
+
+                <div class="cta-box">
+                    <h2 style="justify-content: center; border: none; margin-top: 0;">Ready to Scale?</h2>
+                    <p style="margin-bottom: 5px;">Launching a store is easy. Scaling it is hard.</p>
+                    <p>If you are ready to move beyond basic templates and build a brand that dominates its niche, you need the right technical partner.</p>
+                    <a href="https://ecommbuddy.in/" class="cta-btn">Turn Your Store into a Revenue Engine</a>
+                </div>
+
+            </div>
         </article>
+
     </main>
 
     <footer>
