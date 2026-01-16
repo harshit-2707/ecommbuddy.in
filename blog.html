@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs & Insights | EcommBuddy</title>
+    <meta name="description" content="Read the latest insights on Shopify development and E-commerce growth in India.">
+    <meta name="robots" content="index, follow">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHGR79YL85"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XHGR79YL85');
+    </script>
+
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <style>
+        /* Blog Grid Styles */
+        .blog-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .blog-card {
+            background-color: rgba(255, 255, 255, 0.05); /* Subtle transparent card for dark mode */
+            border: 1px solid var(--border-color, #333);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color, #007bff);
+        }
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-main, #fff);
+        }
+        .blog-desc {
+            color: var(--text-secondary, #ccc);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .read-btn {
+            display: inline-block;
+            color: var(--primary-color, #4a90e2);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .read-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="background-color: var(--bg-light); color: var(--text-main);">
+
+    <nav style="padding: 20px; text-align: center; border-bottom: 1px solid #333;">
+        <a href="index.html" style="color: var(--text-main); text-decoration: none; font-weight: bold; font-size: 1.2rem;">Home</a>
+    </nav>
+
+    <main class="blog-container">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">Latest Blogs</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Insights, strategies, and technical guides for e-commerce growth.
+            </p>
+        </div>
+
+        <div class="blog-grid">
+
+            <article class="blog-card">
+                <h2 class="blog-title">
+                    <a href="shopify-store-development-india.html" style="text-decoration: none; color: inherit;">
+                        Shopify Store Development in India
+                    </a>
+                </h2>
+                <p class="blog-desc">
+                    If you have a business in India, you know things are different now. Learn why a fast, optimized Shopify store is essential for capturing customers on Instagram and social media.
+                </p>
+                <a href="shopify-store-development-india.html" class="read-btn">Read Full Article →</a>
+            </article>
+
+            </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px; font-size: 0.9rem; color: var(--text-secondary); margin-top: 40px; border-top: 1px solid #333;">
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&copy; 2026 EcommBuddy. All rights reserved.</a>
+    </footer>
+
+</body>
+</html>
