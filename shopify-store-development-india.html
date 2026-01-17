@@ -23,13 +23,14 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
-        /* --- LIGHT THEME (Match Privacy Policy) --- */
+        /* --- LIGHT THEME VARIABLES --- */
         :root {
             --bg-body: #f8f9fa;
             --bg-paper: #ffffff;
-            --text-main: #111827;     /* Almost Black */
-            --text-body: #4b5563;     /* Dark Grey */
-            --primary: #2563eb;       /* The Blue from your screenshot */
+            --text-main: #111827;
+            --text-body: #4b5563;
+            --primary: #2563eb;       /* Brand Blue */
+            --whatsapp: #25d366;      /* WhatsApp Green */
             --shadow-paper: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --border: #e5e7eb;
         }
@@ -46,7 +47,8 @@
         /* Navbar */
         nav {
             background: #fff; border-bottom: 1px solid var(--border);
-            padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 50;
         }
         .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--text-main); text-decoration: none; }
         .back-link { color: var(--text-body); text-decoration: none; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -64,7 +66,6 @@
             padding: 60px;
             border-radius: 12px;
             box-shadow: var(--shadow-paper);
-            /* 3D Entry Animation */
             animation: slideUp 0.6s ease-out forwards;
             border: 1px solid var(--border);
         }
@@ -74,47 +75,55 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Typography */
-        h1 {
-            font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .meta { 
-            text-align: center; color: #6b7280; font-size: 0.9rem; margin-bottom: 50px; 
-            border-bottom: 1px solid var(--border); padding-bottom: 20px;
-        }
-
-        /* Blue Subheadings (Like Privacy Policy) */
-        h2 {
-            font-size: 1.5rem; font-weight: 700; color: var(--primary);
-            margin-top: 40px; margin-bottom: 15px;
-        }
-
+        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 20px; text-align: center; }
+        .meta { text-align: center; color: #6b7280; font-size: 0.9rem; margin-bottom: 50px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        h2 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-top: 40px; margin-bottom: 15px; }
         p { margin-bottom: 20px; color: var(--text-body); font-size: 1.05rem; }
-        
         a.text-link { color: var(--primary); text-decoration: none; font-weight: 500; }
-        a.text-link:hover { text-decoration: underline; }
-
-        /* CTA Box (Light) */
-        .cta-box {
-            background: #eff6ff; /* Light Blue BG */
-            border: 1px solid #dbeafe;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            margin-top: 50px;
-        }
+        
+        /* CTA Box */
+        .cta-box { background: #eff6ff; border: 1px solid #dbeafe; border-radius: 8px; padding: 30px; text-align: center; margin-top: 50px; }
         .cta-box h2 { color: var(--primary); margin-top: 0; }
-        .cta-btn {
-            display: inline-block; background: var(--primary); color: white; padding: 12px 30px;
-            border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px;
-            transition: transform 0.2s;
-        }
+        .cta-btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px; transition: transform 0.2s; }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
 
-        /* Mobile */
-        @media (max-width: 768px) { .paper-sheet { padding: 30px 20px; } h1 { font-size: 2rem; } }
+        /* --- FLOATING CONTACT BUTTONS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .fab:hover { transform: scale(1.1); }
+
+        .fab-mail { background-color: var(--primary); }   /* Blue Mail Button */
+        .fab-whatsapp { background-color: var(--whatsapp); } /* Green WhatsApp Button */
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .paper-sheet { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+            .floating-buttons { bottom: 20px; right: 20px; gap: 10px; }
+            .fab { width: 50px; height: 50px; font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -155,6 +164,16 @@
 
         </article>
     </main>
+
+    <div class="floating-buttons">
+        <a href="mailto:harshit@ecommbuddy.in" class="fab fab-mail" title="Email Us">
+            <i class="ri-mail-send-fill"></i>
+        </a>
+        
+        <a href="https://wa.me/916388201024" class="fab fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <i class="ri-whatsapp-fill"></i>
+        </a>
+    </div>
 
 </body>
 </html>
