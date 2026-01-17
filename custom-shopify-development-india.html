@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Shopify Development in India | EcommBuddy</title>
+    
+    <meta name="keywords" content="Custom Shopify Development India, Custom Liquid Coding, Shopify Experts India">
+    <meta name="description" content="Break the limits of standard themes with Custom Shopify Development. Save money on apps and build unique brand experiences with EcommBuddy.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHGR79YL85"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XHGR79YL85');
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- LIGHT THEME VARIABLES --- */
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-paper: #ffffff;
+            --text-main: #111827;
+            --text-body: #4b5563;
+            --primary: #2563eb;       /* Brand Blue */
+            --whatsapp: #25d366;      /* WhatsApp Green */
+            --shadow-paper: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* Navbar */
+        nav {
+            background: #fff; border-bottom: 1px solid var(--border);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 50;
+        }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--text-main); text-decoration: none; }
+        .back-link { color: var(--text-body); text-decoration: none; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .back-link:hover { color: var(--primary); }
+
+        /* Main 3D Paper Sheet */
+        main {
+            max-width: 900px;
+            margin: 60px auto 100px;
+            padding: 0 20px;
+        }
+
+        .paper-sheet {
+            background: var(--bg-paper);
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-paper);
+            animation: slideUp 0.6s ease-out forwards;
+            border: 1px solid var(--border);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 20px; text-align: center; }
+        .meta { text-align: center; color: #6b7280; font-size: 0.9rem; margin-bottom: 50px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        h2 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-top: 40px; margin-bottom: 15px; }
+        p { margin-bottom: 20px; color: var(--text-body); font-size: 1.05rem; }
+        
+        /* Lists */
+        ul { margin-bottom: 20px; padding-left: 20px; color: var(--text-body); }
+        li { margin-bottom: 10px; }
+        strong { color: var(--text-main); font-weight: 600; }
+
+        /* CTA Box */
+        .cta-box { background: #eff6ff; border: 1px solid #dbeafe; border-radius: 8px; padding: 30px; text-align: center; margin-top: 50px; }
+        .cta-box h2 { color: var(--primary); margin-top: 0; }
+        .cta-btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px; transition: transform 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
+
+        /* --- FLOATING CONTACT BUTTONS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .fab:hover { transform: scale(1.1); }
+        .fab-mail { background-color: var(--primary); }
+        .fab-whatsapp { background-color: var(--whatsapp); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .paper-sheet { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+            .floating-buttons { bottom: 20px; right: 20px; gap: 10px; }
+            .fab { width: 50px; height: 50px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">EcommBuddy</a>
+        <a href="blog.html" class="back-link">Back to Insights</a>
+    </nav>
+
+    <main>
+        <article class="paper-sheet">
+            
+            <h1>Custom Shopify Development in India</h1>
+            <div class="meta">
+                <span>Published: January 16, 2026</span> • <span>Category: Technical</span>
+            </div>
+
+            <p>Every time you start a store it begins the same way. You choose a template you put up your company logo you add the things you want to sell and then you start selling them. This method is fine, for a while until the online store does not work like you want it to.</p>
+
+            <p>You might want a bundle deal called "Build Your Own Box" that the theme does not have. You might want the "Add to Cart" button to do something when you click it.. Maybe your website is just really slow now because you have added a lot of extra things to it.</p>
+
+            <p>This is the point where things get really tough and you need to do Custom Shopify Development to make things work. Custom Shopify Development is what you have to do at this point.</p>
+
+            <h2>1. The "App Trap": Why Less is More</h2>
+            <p>Lots of store owners in India are trying to fix problems by installing apps. They need a popup so they get an app for that. They need a wishlist so they get an app for that too. They need a cart so they get a sticky cart app. Store owners, in India are getting apps for everything like a popup app or a wishlist app or a sticky cart app.</p>
+
+            <p>You will be surprised how quickly things add up and before you know it Website subscription fees are costing you than two hundred dollars every month. Your Website code is also getting really big and messy, with all these scripts that are making your Website load very slowly.</p>
+
+            <p><strong>The Solution:</strong> Custom development is the answer to this problem. Of renting an application we write the code one time. This approach is much cleaner it loads a lot faster. You have complete ownership of Custom development forever. At EcommBuddy we are experts in writing custom Liquid code that replaces those applications, which saves you a lot of money and makes your website load significantly faster. Custom development like this is very good, for you because it saves you money and makes your website load faster with Custom development.</p>
+
+            <h2>2. Unique Brand Experiences</h2>
+            <p>In a crowded place like India it is not good to look like everyone else. This is because if your store looks like another store people will not remember your store. For example if you and another store owner both use the "Dawn" theme your store will look the same as the other store. The "Dawn" theme is used by people so it is not special. If you want people to remember your store you need to make it look different, from the "Dawn" theme stores. The India market is very crowded so you need to make your store stand out from the stores that use the "Dawn" theme.</p>
+
+            <p>Custom development lets you do your thing and not follow the rules. We can make things like:</p>
+
+            <ul>
+                <li><strong>Custom Product Pages:</strong> These are made for your product. For example a jewelry store needs a setup, than a protein supplement store. This is because a jewelry store and a protein supplement store are very different and need to show their products in ways. Custom Product Pages help with this by giving you a layout that is tailored to your product like a jewelry store or a protein supplement store.</li>
+                <li><strong>Quiz Funnels:</strong> These are really cool because they help customers pick the product for them. It is like a game where the customer answers questions and then they get to see which product is the best fit, for them. This way Quiz Funnels make it easy for customers to choose the product with an interactive quiz.</li>
+                <li><strong>Wholesale Portals:</strong> A locked section for your B2B clients to order in bulk.</li>
+            </ul>
+
+            <h2>3. Speed & Performance</h2>
+            <p>Google has made it very clear that Core Web Vitals are really important.</p>
+
+            <p>If your website shifts around while it is loading, which is called Core Web Vitals or it takes too long to become interactive Google will rank your website lower.</p>
+
+            <p>This is because Google wants to make sure that people have an experience when they visit Core Web Vitals websites.</p>
+
+            <p>So if your website has a lot of Core Web Vitals problems like a CLS or a high LCP Google will not rank it as high, as other websites.</p>
+
+            <p>Standard themes are usually too much because they want to do everything for every person. When we do custom development we can get rid of the code that we do not need and make the critical rendering path better. The result is that the website feels fast even when you are on a 4G network in a smaller city like a Tier-2 city. Custom development is great because it helps us make a website that's super quick and that is what custom development is all about making custom development work, for the website and the people who use the website.</p>
+
+            <div class="cta-box">
+                <h2>Ready to Break the Limits?</h2>
+                <p>If you think your current theme is not doing the job it is time to take a look at the theme. You should stop paying money every month for apps that you do not really need. Instead you should start building something that's yours like your own theme. This way your theme belongs to you. You are, in control of your theme.</p>
+                <a href="https://ecommbuddy.in/" class="cta-btn">Contact EcommBuddy</a>
+            </div>
+
+        </article>
+    </main>
+
+    <div class="floating-buttons">
+        <a href="mailto:harshit@ecommbuddy.in" class="fab fab-mail" title="Email Us">
+            <i class="ri-mail-send-fill"></i>
+        </a>
+        
+        <a href="https://wa.me/916388201024" class="fab fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <i class="ri-whatsapp-fill"></i>
+        </a>
+    </div>
+
+</body>
+</html>
