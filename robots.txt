@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Prevent crawlers from accessing sensitive server folders (Security Best Practice)
+# Security: Block backend folders
 Disallow: /cgi-bin/
 Disallow: /private/
 Disallow: /tmp/
