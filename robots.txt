@@ -1,10 +1,10 @@
 User-agent: *
 Allow: /
 
-# Security: Block backend folders
+# Security: Prevent bots from crawling backend folders
 Disallow: /cgi-bin/
 Disallow: /private/
 Disallow: /tmp/
 
-# Point Google to your new Sitemap
+# Sitemap Location
 Sitemap: https://ecommbuddy.in/sitemap.xml
