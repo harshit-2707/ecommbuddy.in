@@ -14,117 +14,155 @@
       gtag('config', 'G-XHGR79YL85');
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
-        /* --- 3D THEME VARIABLES --- */
+        /* --- LIGHT 3D THEME VARIABLES --- */
         :root {
-            --bg-body: #050505;
-            --text-main: #ffffff;
-            --text-muted: #9ca3af;
-            --accent: #3b82f6;
+            --bg-body: #f8f9fa;       /* Very light grey (almost white) */
+            --bg-card: #ffffff;       /* Pure white cards */
+            --text-main: #1a1a1a;     /* Dark grey/Black for headings */
+            --text-body: #4a4a4a;     /* Softer grey for text */
+            --primary: #2563eb;       /* The "Privacy Policy" Blue */
+            --primary-light: #eff6ff; /* Very light blue background */
             
-            --glass-bg: rgba(255, 255, 255, 0.03); 
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-highlight: rgba(255, 255, 255, 0.2);
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            --card-hover-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.5);
+            /* 3D Shadows for Light Theme */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            --shadow-md: 0 10px 30px -5px rgba(0,0,0,0.05);
+            --shadow-hover: 0 25px 50px -12px rgba(37, 99, 235, 0.15); /* Blue-tinted shadow */
+            
+            --border-light: #e5e7eb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-body);
-            background-image: radial-gradient(circle at 50% 0%, #1a1a2e, var(--bg-body) 80%);
+            /* Subtle modern gradient mesh background */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.05) 0px, transparent 50%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             min-height: 100vh;
         }
 
+        /* --- Navbar (Clean & White) --- */
         nav {
-            border-bottom: 1px solid var(--glass-border);
-            padding: 20px 40px;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(5, 5, 5, 0.6); backdrop-filter: blur(12px);
-            position: sticky; top: 0; z-index: 100;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .nav-logo { font-weight: 700; font-size: 1.2rem; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-size: 0.95rem; transition: 0.3s; font-weight: 500; }
-        .nav-links a:hover, .nav-links a.active { color: #fff; }
+        .nav-logo { 
+            font-weight: 800; font-size: 1.3rem; color: var(--text-main); text-decoration: none; 
+            display: flex; align-items: center; gap: 8px;
+        }
+        .nav-links a { 
+            color: var(--text-body); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; transition: 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); }
 
-        header { text-align: center; padding: 100px 20px 60px; max-width: 800px; margin: 0 auto; }
+        /* --- Header --- */
+        header { text-align: center; padding: 80px 20px 50px; max-width: 800px; margin: 0 auto; }
         h1 {
-            font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px;
+            color: var(--text-main);
         }
-        .subtitle { color: var(--text-muted); font-size: 1.25rem; font-weight: 300; }
+        .subtitle { color: var(--text-body); font-size: 1.2rem; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 120px; }
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        /* --- 3D Grid --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 100px; }
+        .blog-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; 
+            perspective: 1000px; /* Enables 3D space */
+        }
 
-        /* --- CARD DESIGN --- */
+        /* --- 3D LIGHT CARD --- */
         .card {
-            background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid var(--glass-highlight); border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border); border-bottom: 1px solid transparent;
-            box-shadow: var(--card-shadow); border-radius: 16px; overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy 3D animation */
             display: flex; flex-direction: column; height: 100%; position: relative;
         }
 
-        .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--card-hover-shadow); border-top-color: rgba(255,255,255,0.4); }
+        /* The 3D Hover Effect */
+        .card:hover {
+            transform: translateY(-10px) rotateX(2deg); /* Lifts and tilts slightly */
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(37, 99, 235, 0.3); /* Blue border on hover */
+        }
 
         .card-image-placeholder {
-            height: 180px; width: 100%; background: linear-gradient(45deg, #121212, #1a1a1a);
-            display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.1); font-size: 3rem; position: relative; overflow: hidden;
+            height: 180px; width: 100%; 
+            background: var(--primary-light);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary); font-size: 3rem;
+            position: relative; overflow: hidden;
         }
+
+        /* Sheen Effect (Animation) */
         .card-image-placeholder::after {
             content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
             transform: skewX(-25deg); animation: sheen 3s infinite;
         }
         @keyframes sheen { to { left: 150%; } }
 
         .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .tags { display: flex; gap: 8px; margin-bottom: 15px; }
+        
         .tag {
-            font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
-            padding: 4px 10px; border-radius: 50px; background: rgba(59, 130, 246, 0.1); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2);
+            display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 4px 12px; border-radius: 50px; margin-bottom: 15px; width: fit-content;
+            background: var(--primary-light); color: var(--primary);
         }
 
-        .card h2 { font-size: 1.35rem; margin-bottom: 12px; line-height: 1.4; }
-        .card h2 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
-        .card:hover h2 a { color: var(--accent); }
-        .card p.excerpt { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        .card h2 { font-size: 1.4rem; margin-bottom: 12px; line-height: 1.3; }
+        .card h2 a { color: var(--text-main); text-decoration: none; transition: 0.2s; }
+        .card:hover h2 a { color: var(--primary); }
+        .card p { color: var(--text-body); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
 
         .card-footer {
-            display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid var(--glass-border); font-size: 0.85rem; color: var(--text-muted);
+            border-top: 1px solid var(--border-light); padding-top: 20px; 
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.85rem; color: #666;
         }
-        .meta { display: flex; align-items: center; gap: 6px; }
-        .read-link {
-            color: var(--text-main); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: 0.3s;
-        }
-        .read-link:hover { color: var(--accent); }
-        .read-link:hover i { transform: translateX(4px); }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.9rem; }
+        .read-link {
+            color: var(--primary); font-weight: 600; text-decoration: none; 
+            display: inline-flex; align-items: center; gap: 5px; transition: 0.3s;
+        }
+        .read-link:hover { gap: 10px; } /* Arrow moves on hover */
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border-light); color: #666; font-size: 0.9rem; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="nav-logo"><i class="ri-code-box-line" style="color: var(--accent);"></i> EcommBuddy</a>
+        <a href="index.html" class="nav-logo">EcommBuddy</a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="blog.html" class="active">Insights</a>
+            <a href="index.html">Back to Home</a>
         </div>
     </nav>
 
     <header>
-        <h1>Insights & Intelligence</h1>
-        <p class="subtitle">Decode e-commerce growth with technical deep dives and strategic playbooks.</p>
+        <h1>Latest Insights</h1>
+        <p class="subtitle">Strategies for growth. Built for India.</p>
     </header>
 
     <main class="container">
@@ -133,15 +171,12 @@
             <article class="card">
                 <div class="card-image-placeholder"><i class="ri-shopify-fill"></i></div>
                 <div class="card-content">
-                    <div class="tags">
-                        <span class="tag">Strategy</span>
-                        <span class="tag">Shopify</span>
-                    </div>
+                    <span class="tag">Strategy</span>
                     <h2><a href="shopify-store-development-india.html">Shopify Store Development in India</a></h2>
-                    <p class="excerpt">Why standard templates fail in the Indian market. Learn how to build a store that handles high traffic and reduces RTO losses.</p>
+                    <p>Why standard templates fail in the Indian market. Learn to build stores that handle traffic and reduce RTO.</p>
                     <div class="card-footer">
-                        <div class="meta"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
-                        <a href="shopify-store-development-india.html" class="read-link">Read Now <i class="ri-arrow-right-line"></i></a>
+                        <span>Jan 16, 2026</span>
+                        <a href="shopify-store-development-india.html" class="read-link">Read Article <i class="ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </article>
@@ -149,29 +184,25 @@
             <article class="card">
                 <div class="card-image-placeholder"><i class="ri-code-s-slash-line"></i></div>
                 <div class="card-content">
-                    <div class="tags">
-                        <span class="tag" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">Technical</span>
-                    </div>
+                    <span class="tag">Technical</span>
                     <h2><a href="custom-shopify-development-india.html">Custom Shopify Development India</a></h2>
-                    <p class="excerpt">When to move beyond apps and start writing custom liquid code for unique brand experiences and faster load times.</p>
+                    <p>When to move beyond apps and start writing custom liquid code for unique experiences.</p>
                     <div class="card-footer">
-                        <div class="meta"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
-                        <a href="custom-shopify-development-india.html" class="read-link">Read Now <i class="ri-arrow-right-line"></i></a>
+                        <span>Jan 16, 2026</span>
+                        <a href="custom-shopify-development-india.html" class="read-link">Read Article <i class="ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </article>
 
-             <article class="card">
+            <article class="card">
                 <div class="card-image-placeholder"><i class="ri-server-line"></i></div>
                 <div class="card-content">
-                    <div class="tags">
-                        <span class="tag" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">Architecture</span>
-                    </div>
+                    <span class="tag">Architecture</span>
                     <h2><a href="ecommerce-website-development-india.html">E-commerce Website Development India</a></h2>
-                    <p class="excerpt">Building digital assets that last. A deep dive into security, scalability, and choosing the right tech stack for growth.</p>
+                    <p>Building digital assets that last. Security, scalability, and the right tech stack.</p>
                     <div class="card-footer">
-                        <div class="meta"><i class="ri-calendar-line"></i> Jan 16, 2026</div>
-                        <a href="ecommerce-website-development-india.html" class="read-link">Read Now <i class="ri-arrow-right-line"></i></a>
+                        <span>Jan 16, 2026</span>
+                        <a href="ecommerce-website-development-india.html" class="read-link">Read Article <i class="ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </article>
